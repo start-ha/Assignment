@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SoundWave Home</title>
+    <style></style>
+  </head>
+  <body>
+    <div class="container">
+      <main class="main">
+        <!-- Recommended Section -->
+        <section class="section">
+          <h2 class="section-title">Recommended for You</h2>
+          <div class="recommended-grid">
+            <div class="music-card">
+              <div class="card-image">
+                <div class="duration">3:45</div>
+                <button class="play-button play-green">▶</button>
+              </div>
+              <div class="card-title">Midnight City</div>
+              <div class="card-artist">M83</div>
+              <div class="card-stats">
+                <span class="stat-item">👁 5.2M</span>
+                <span class="stat-item">❤ 45K</span>
+              </div>
+            </div>
+
+            <div class="music-card">
+              <div class="card-image">
+                <div class="duration">4:12</div>
+                <button class="play-button play-red">▶</button>
+              </div>
+              <div class="card-title">Blinding Lights</div>
+              <div class="card-artist">The Weeknd</div>
+              <div class="card-stats">
+                <span class="stat-item">👁 12.1M</span>
+                <span class="stat-item">❤ 89K</span>
+              </div>
+            </div>
+
+            <div class="music-card">
+              <div class="card-image">
+                <div class="duration">2:58</div>
+                <button class="play-button play-purple">▶</button>
+              </div>
+              <div class="card-title">Good 4 U</div>
+              <div class="card-artist">Olivia Rodrigo</div>
+              <div class="card-stats">
+                <span class="stat-item">👁 8.9M</span>
+                <span class="stat-item">❤ 67K</span>
+              </div>
+            </div>
+
+            <div class="music-card">
+              <div class="card-image">
+                <div class="duration">3:21</div>
+                <button class="play-button play-pink">▶</button>
+              </div>
+              <div class="card-title">As It Was</div>
+              <div class="card-artist">Harry Styles</div>
+              <div class="card-stats">
+                <span class="stat-item">👁 15.3M</span>
+                <span class="stat-item">❤ 120K</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Latest Uploads Section -->
+        <section class="section">
+          <h2 class="section-title">Latest Uploads</h2>
+          <div class="uploads-grid">
+            <div class="upload-card">
+              <div class="upload-avatar avatar-green">A</div>
+              <div class="upload-info">
+                <div class="upload-title">Electronic Dreams</div>
+                <div class="upload-artist">DJ SynthWave</div>
+              </div>
+              <div class="upload-time">2 hrs ago</div>
+              <button class="upload-play">▶</button>
+            </div>
+
+            <div class="upload-card">
+              <div class="upload-avatar avatar-red">S</div>
+              <div class="upload-info">
+                <div class="upload-title">Sunset Vibes</div>
+                <div class="upload-artist">Chill Nation</div>
+              </div>
+              <div class="upload-time">5 hrs ago</div>
+              <button class="upload-play">▶</button>
+            </div>
+
+            <div class="upload-card">
+              <div class="upload-avatar avatar-purple">R</div>
+              <div class="upload-info">
+                <div class="upload-title">Rock Anthem 2024</div>
+                <div class="upload-artist">The Rockers</div>
+              </div>
+              <div class="upload-time">8 hrs ago</div>
+              <button class="upload-play">▶</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Chart Section -->
+        <section class="section">
+          <div class="chart-list">
+            <div class="chart-item">
+              <div class="chart-number chart-1">1</div>
+              <div class="chart-icon icon-green">♪</div>
+              <div class="chart-info">
+                <div class="chart-title">As It Was</div>
+                <div class="chart-artist">Harry Styles</div>
+              </div>
+              <div class="chart-plays">15.3M plays</div>
+              <button class="chart-play">▶</button>
+            </div>
+
+            <div class="chart-item">
+              <div class="chart-number chart-2">2</div>
+              <div class="chart-icon icon-red">♪</div>
+              <div class="chart-info">
+                <div class="chart-title">Anti-Hero</div>
+                <div class="chart-artist">Taylor Swift</div>
+              </div>
+              <div class="chart-plays">12.8M plays</div>
+              <button class="chart-play">▶</button>
+            </div>
+
+            <div class="chart-item">
+              <div class="chart-number chart-3">3</div>
+              <div class="chart-icon icon-purple">♪</div>
+              <div class="chart-info">
+                <div class="chart-title">Unholy</div>
+                <div class="chart-artist">Sam Smith ft. Kim Petras</div>
+              </div>
+              <div class="chart-plays">11.5M plays</div>
+              <button class="chart-play">▶</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      // 플레이 버튼 클릭 이벤트
+      document.querySelectorAll(".play-button, .upload-play, .chart-play").forEach(button => {
+        button.addEventListener("click", function (e) {
+          e.stopPropagation();
+
+          if (this.textContent === "▶") {
+            this.textContent = "⏸";
+            this.style.transform = "scale(1.1)";
+          } else {
+            this.textContent = "▶";
+            this.style.transform = "scale(1)";
+          }
+        });
+      });
+
+      // 카드 클릭 이벤트
+      document.querySelectorAll(".music-card, .upload-card, .chart-item").forEach(card => {
+        card.addEventListener("click", function () {
+          console.log(
+            "Playing:",
+            this.querySelector(".card-title, .upload-title, .chart-title").textContent
+          );
+        });
+      });
+    </script>
+  </body>
+</html>

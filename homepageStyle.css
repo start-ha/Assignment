@@ -1,0 +1,637 @@
+/* 브라우저 기본 margin, padding 제거 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 기본 폰트 사이즈/라인 높이 통일 */
+html,
+body {
+    height: 100%;
+    line-height: 1.5;
+    background-color: #121212;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 리스트 점 제거 */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 링크 밑줄 제거 (필요 시) */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 컨테이너 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px; 
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    grid-template-columns: 1fr 2fr; 
+    gap: 2rem; 
+ 
+
+}
+
+.main {
+    padding: 24px 0;
+}
+
+/* 섹션 스타일 */
+.section {
+    margin-bottom: 48px;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #fff;
+}
+
+/* Recommended Section */
+.recommended-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+.music-card {
+    background: #181818;
+    border-radius: 8px;
+    padding: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.music-card:hover {
+    background: #282828;
+    transform: translateY(-4px);
+    border-color: #333;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.card-image {
+    width: 100%;
+    height: 160px;
+    background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+    border-radius: 6px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.play-button {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    opacity: 0.9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.play-green { 
+    background: #1db954; 
+    color: #fff; 
+}
+
+.play-red { 
+    background: #e22134; 
+    color: #fff; 
+}
+
+.play-purple { 
+    background: #8e44ad; 
+    color: #fff; 
+}
+
+.play-pink { 
+    background: #e91e63; 
+    color: #fff; 
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.duration {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+    backdrop-filter: blur(4px);
+}
+
+.card-content {
+    padding: 0 4px;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #fff;
+    line-height: 1.3;
+}
+
+.card-artist {
+    font-size: 14px;
+    color: #b3b3b3;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.card-stats {
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+    color: #888;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Latest Uploads Section */
+.uploads-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.upload-card {
+    background: #181818;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.upload-card:hover {
+    background: #282828;
+    border-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.upload-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.avatar-green { 
+    background: linear-gradient(135deg, #1db954, #1ed760);
+    color: #fff; 
+}
+
+.avatar-red { 
+    background: linear-gradient(135deg, #e22134, #ff4757);
+    color: #fff; 
+}
+
+.avatar-purple { 
+    background: linear-gradient(135deg, #8e44ad, #9b59b6);
+    color: #fff; 
+}
+
+.upload-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.upload-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    color: #fff;
+    line-height: 1.3;
+}
+
+.upload-artist {
+    font-size: 14px;
+    color: #b3b3b3;
+    line-height: 1.3;
+}
+
+.upload-time {
+    font-size: 12px;
+    color: #888;
+    white-space: nowrap;
+    margin-right: 12px;
+    font-weight: 500;
+}
+
+.upload-play {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #1db954;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.upload-play:hover {
+    background: #1ed760;
+    transform: scale(1.1);
+}
+
+/* Chart Section */
+.chart-list {
+    background: #181818;
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid #333;
+}
+
+.chart-item {
+    display: flex;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #333;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.chart-item:last-child {
+    border-bottom: none;
+}
+
+.chart-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    margin: 0 -24px;
+    padding: 16px 24px;
+}
+
+.chart-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 16px;
+    flex-shrink: 0;
+}
+
+.chart-1 { 
+    background: linear-gradient(135deg, #1db954, #1ed760);
+    color: #fff; 
+}
+
+.chart-2 { 
+    background: linear-gradient(135deg, #e22134, #ff4757);
+    color: #fff; 
+}
+
+.chart-3 { 
+    background: linear-gradient(135deg, #8e44ad, #9b59b6);
+    color: #fff; 
+}
+
+.chart-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    flex-shrink: 0;
+    font-size: 16px;
+}
+
+.icon-green { 
+    background: linear-gradient(135deg, #1db954, #1ed760);
+    color: #fff; 
+}
+
+.icon-red { 
+    background: linear-gradient(135deg, #e22134, #ff4757);
+    color: #fff; 
+}
+
+.icon-purple { 
+    background: linear-gradient(135deg, #8e44ad, #9b59b6);
+    color: #fff; 
+}
+
+.chart-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.chart-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    color: #fff;
+    line-height: 1.3;
+}
+
+.chart-artist {
+    font-size: 14px;
+    color: #b3b3b3;
+    line-height: 1.3;
+}
+
+.chart-plays {
+    font-size: 14px;
+    color: #888;
+    white-space: nowrap;
+    margin-right: 16px;
+    font-weight: 500;
+}
+
+.chart-play {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid #666;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+.chart-play:hover {
+    background: #1db954;
+    border-color: #1db954;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* 반응형 디자인 */
+
+/* 태블릿 (1024px 이하) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    .recommended-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 20px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+    }
+    
+    .card-image {
+        height: 140px;
+    }
+    
+    .uploads-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+/* 모바일 (768px 이하) */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
+    
+    .main {
+        padding: 20px 0;
+    }
+    
+    .section {
+        margin-bottom: 36px;
+    }
+    
+    .section-title {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    
+    .recommended-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 16px;
+    }
+    
+    .card-image {
+        height: 120px;
+    }
+    
+    .play-button {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+    
+    .uploads-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .upload-card {
+        padding: 12px;
+        gap: 12px;
+    }
+    
+    .upload-avatar {
+        width: 48px;
+        height: 48px;
+        font-size: 18px;
+    }
+    
+    .chart-list {
+        padding: 16px;
+    }
+    
+    .chart-item {
+        padding: 12px 0;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .chart-item:hover {
+        margin: 0 -16px;
+        padding: 12px 16px;
+    }
+    
+    .chart-plays {
+        order: 1;
+        width: 100%;
+        margin: 0;
+        padding-left: 64px;
+        font-size: 12px;
+    }
+}
+
+/* 작은 모바일 (480px 이하) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 12px;
+    }
+    
+    .recommended-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .card-image {
+        height: 100px;
+    }
+    
+    .play-button {
+        width: 36px;
+        height: 36px;
+        font-size: 12px;
+    }
+    
+    .card-title {
+        font-size: 14px;
+    }
+    
+    .card-artist {
+        font-size: 12px;
+    }
+    
+    .upload-card {
+        padding: 10px;
+        gap: 10px;
+    }
+    
+    .upload-avatar {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .upload-title {
+        font-size: 14px;
+    }
+    
+    .upload-artist {
+        font-size: 12px;
+    }
+    
+    .upload-time {
+        font-size: 11px;
+    }
+    
+    .upload-play {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+    
+    .chart-number {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+    
+    .chart-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+    
+    .chart-title {
+        font-size: 14px;
+    }
+    
+    .chart-artist {
+        font-size: 12px;
+    }
+
+
+    /* 컨테이너: 가운데 정렬 */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 내부 콘텐츠 가운데 정렬 */
+}
+
+/* Recommended Section 가운데 정렬 */
+.recommended-grid {
+    display: flex; *
+    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));   */
+    /* gap: 24px; * */ */
+    /* max-width: fit-content;  */
+    /* margin: 0 auto;  */ */
+    /* justify-content: center;   */
+}
+
+/* Latest Uploads Section 가운데 정렬 */
+.uploads-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+    margin-bottom: 30px;
+    justify-content: center; /* 업로드 카드 가운데 정렬 */
+}
+
+/* Chart Section 가운데 정렬 */
+.chart-list {
+    margin: 0 auto; /* 차트 블록 자체를 가운데 배치 */
+}
+
+
+
+
+}
